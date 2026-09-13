@@ -18,30 +18,35 @@ export function HowWeWork() {
 
     const steps = motion.utils.toArray<HTMLElement>('[data-process-step]', layers)
     const items = steps.map(step => motion.utils.toArray<HTMLElement>('[data-process-item]', step))
+    const descriptions = motion.utils.toArray<HTMLElement>('[data-process-description]', layers)
     if (steps.length !== 3) return
 
     const rootStyles = getComputedStyle(document.documentElement)
     const initialGreen = rootStyles.getPropertyValue('--color-surface-green').trim()
     const finalGreen = rootStyles.getPropertyValue('--color-surface-green-strong').trim()
+    const finalScale = 0.72
+    const finalDescriptionSize = 16 / finalScale
+    const singleStepOffset = () => -window.innerHeight * 0.05
     const finalOffset = () => Math.min(225, window.innerHeight * 0.27)
 
     motion.set(stage, { backgroundColor: initialGreen })
     motion.set(heading, { autoAlpha: 0, y: 12 })
-    motion.set(steps, { autoAlpha: 0, scale: 1, y: 0, transformOrigin: '50% 50%' })
+    motion.set(steps, { autoAlpha: 0, scale: 1, y: singleStepOffset, transformOrigin: '50% 50%' })
     motion.set(items.flat(), { autoAlpha: 0, y: 18 })
 
     const entranceTimeline = motion.timeline({
       scrollTrigger: {
         trigger: stage,
-        start: 'top 82%',
-        once: true,
+        start: 'top 62%',
+        end: 'top 12%',
+        scrub: 0.7,
       },
     })
 
     entranceTimeline
       .to(heading, { autoAlpha: 1, y: 0, duration: 0.55, ease: 'power3.out' }, 0)
       .set(steps[0], { autoAlpha: 1 }, 0.08)
-      .to(items[0], { autoAlpha: 1, y: 0, duration: 0.55, stagger: 0.14, ease: 'power3.out' }, 0.1)
+      .to(items[0], { autoAlpha: 1, y: 0, duration: 0.42, stagger: 0.12, ease: 'power2.out' }, 0.1)
 
     const timeline = motion.timeline({
       scrollTrigger: {
@@ -68,9 +73,10 @@ export function HowWeWork() {
       .set(steps[2], { autoAlpha: 0 }, 3.82)
       .to(stage, { backgroundColor: finalGreen, duration: 0.62, ease: 'none' }, 3.64)
       .set(items.flat(), { autoAlpha: 1, y: 0 }, 4.02)
+      .set(descriptions, { fontSize: finalDescriptionSize }, 4.02)
       .set(steps, {
         autoAlpha: 0,
-        scale: 0.72,
+        scale: finalScale,
         y: index => index === 0 ? -finalOffset() + 30 : index === 2 ? finalOffset() + 30 : 30,
       }, 4.02)
       .to(steps[0], { autoAlpha: 1, y: () => -finalOffset(), duration: 0.52, ease: 'power2.out' }, 4.08)
@@ -95,7 +101,7 @@ export function HowWeWork() {
         <div className={styles.content}>
           <p className={styles.number} style={{ color: step.accentColor }} data-process-item>{step.number}</p>
           <h3 data-process-item>{step.title}</h3>
-          <p data-process-item>{step.description}</p>
+          <p data-process-item data-process-description>{step.description}</p>
         </div>
       </article>)}</div>
     </div>

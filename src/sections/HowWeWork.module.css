@@ -1,5 +1,6 @@
 .outer {
   min-width: 0;
+  margin-block-start: 0;
   overflow: clip;
 }
 
@@ -75,7 +76,7 @@
     inset: 0;
     display: grid;
     place-items: center;
-    padding: clamp(132px, 18vh, 176px) var(--page-gutter) var(--space-7);
+    padding: clamp(132px, 18vh, 132px) var(--page-gutter) var(--space-7);
   }
 
   .layer {

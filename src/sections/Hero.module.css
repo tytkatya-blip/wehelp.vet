@@ -3,5 +3,5 @@
 .content h1 { grid-row: 2; transform: translateY(calc(-5svh + var(--hero-reveal-y, 0px))); }
 .support { grid-row: 3; align-self: end; max-width: 480px; padding-bottom: var(--space-8); }
 .support [data-hero-reveal] { transform: translateY(var(--hero-reveal-y, 0px)); }
-.support p { font-size: var(--text-large); margin-bottom: var(--space-6); }
+.support p { margin-bottom: var(--space-6); color: color-mix(in srgb, var(--color-on-image) 70%, transparent); font-size: var(--text-large); }
 @media(max-width: 600px) { .break { display: none; } .support { padding-bottom: var(--space-7); } }

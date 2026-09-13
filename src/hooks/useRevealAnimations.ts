@@ -46,7 +46,7 @@ export function useRevealAnimations() {
               clearProps: 'transform,opacity,visibility',
               scrollTrigger: {
                 trigger: group,
-                start: 'top 86%',
+                start: group.hasAttribute('data-reveal-page-end') ? 'top 98%' : 'top 86%',
                 once: true,
               },
             },

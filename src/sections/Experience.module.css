@@ -1,5 +1,6 @@
 .outer {
   min-width: 0;
+  margin-block-end: 0;
   overflow: clip;
 }
 
@@ -150,7 +151,7 @@
 .imageFrame {
   width: 100%;
   max-width: 660px;
-  aspect-ratio: 1.4;
+  aspect-ratio: 1.2;
   padding: clamp(40px, 2.6vw, 48px);
   display: grid;
   place-items: center;

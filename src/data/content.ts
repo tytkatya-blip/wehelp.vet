@@ -31,9 +31,8 @@ export const team: TeamMember[] = [
 ]
 export const faqs: FAQItem[] = [
   { id: 'project', question: 'What kind of project can we start with?', answer: 'We can begin with your website enquiry flow, the launch of a new course or a single time-consuming manual process. We work with both independent veterinary professionals and larger teams. What matters most is the challenge and the value the solution can bring.' },
-  // TODO: Obtain approved answers to the four collapsed questions in the concept.
-  { id: 'software', question: 'Will we need to replace the software we already use?', answer: 'TODO: Answer awaiting approved content.', todo: true },
-  { id: 'budget', question: 'How are the budget and timeline determined?', answer: 'TODO: Answer awaiting approved content.', todo: true },
-  { id: 'ai', question: 'Do you use AI?', answer: 'TODO: Answer awaiting approved content.', todo: true },
-  { id: 'language', question: 'What language will we communicate in?', answer: 'TODO: Answer awaiting approved content.', todo: true },
+  { id: 'software', question: 'Will we need to replace the software we already use?', answer: 'Not necessarily. We first explore what your current tools can already do. Depending on the challenge and the available integrations, we may configure them, connect them with other services or develop a custom solution.' },
+  { id: 'budget', question: 'How are the budget and timeline determined?', answer: 'After our initial conversation, we define the scope, dependencies and success criteria. You will then receive a proposal outlining the estimated cost and timeline. For more complex projects, we may recommend starting with a separate discovery phase.' },
+  { id: 'ai', question: 'Do you use AI?', answer: 'Yes, where it provides real value—for example, to transcribe videos or prepare initial drafts of course questions. All content is reviewed by people. We agree on the data, tools and terms of use before introducing any AI-based solution.' },
+  { id: 'language', question: 'What language will we communicate in?', answer: 'Our working language is English. If you would prefer another language, we can discuss a suitable translation arrangement in advance. We currently do not have a permanent German-speaking specialist on the team.' },
 ]

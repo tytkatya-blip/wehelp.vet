@@ -103,7 +103,7 @@ export function Experience() {
     const pinTrigger = ScrollTrigger.create({
       trigger: stage,
       start: 'top top',
-      end: () => `+=${window.innerHeight * 6.2}`,
+      end: () => `+=${window.innerHeight * 5.4}`,
       pin: true,
       anticipatePin: 1,
       invalidateOnRefresh: true,
