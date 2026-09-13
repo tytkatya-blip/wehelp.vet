@@ -1,0 +1,9 @@
+.mission { position: relative; isolation: isolate; width: calc(100% - var(--page-gutter)); margin-inline: auto; border-radius: var(--radius-media); overflow: hidden; min-height: min(770px, 90svh); display: grid; place-items: center; padding: var(--space-8) var(--space-5); color: var(--color-on-image); }
+.photo, .shade { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; }
+.photo { object-fit: cover; }
+.shade { background: var(--color-overlay); }
+.content { max-width: 560px; text-align: center; }
+.content img { margin: 0 auto var(--space-9); }
+.content h2 { margin-bottom: var(--space-6); }
+.content p { font-size: var(--text-large); }
+@media(max-width: 600px) { .mission { min-height: 660px; } .content img { margin-bottom: var(--space-8); } .photo { object-position: 58% center; } }

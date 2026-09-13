@@ -1,0 +1,6 @@
+.footer { padding-block: var(--space-6); display: flex; justify-content: space-between; gap: var(--space-6); }
+.brand { display: flex; align-items: center; gap: var(--space-3); text-decoration: none; font-size: var(--text-large); font-weight: 600; margin-bottom: var(--space-3); }
+.footer p, .legal { font-size: var(--text-label); color: var(--color-text-secondary); }
+.links { text-align: right; }
+.email { display: inline-flex; align-items: center; min-height: 48px; font-weight: 500; text-decoration: none; }
+@media(max-width: 600px) { .footer { flex-direction: column; } .links { text-align: left; } }

@@ -1,0 +1,5 @@
+:root { --duration-fast: 180ms; --duration-scene: 600ms; --ease-scene: cubic-bezier(0.22, 1, 0.36, 1); --hero-inset: 0%; --hero-radius: 0px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

@@ -1,0 +1,17 @@
+:root {
+  --font-heading: 'STIX Two Text', Georgia, serif;
+  --font-body: 'Inter', sans-serif;
+  --font-weight-body: 380;
+  --text-display: clamp(46px, 5vw, 68px);
+  --leading-display: clamp(52px, 5.45vw, 74px);
+  --text-h2: clamp(36px, 4.3vw, 60px);
+  --text-h3: 36px;
+  --text-large: 20px; --text-body: 16px; --text-small: 14px; --text-label: 12px;
+}
+body { font-family: var(--font-body); font-size: var(--text-body); line-height: 1.5; font-weight: var(--font-weight-body); }
+h1, h2, h3 { font-weight: 400; }
+h1, h2 { font-family: var(--font-heading); text-wrap: balance; }
+h1 { font-size: var(--text-display); line-height: var(--leading-display); }
+h2 { font-size: var(--text-h2); line-height: 1.08; }
+h3 { font-size: var(--text-large); line-height: 1.35; font-weight: 500; }
+p { text-wrap: pretty; }

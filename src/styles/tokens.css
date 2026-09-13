@@ -1,0 +1,33 @@
+:root {
+  --color-background: #fffefc;
+  --color-text-primary: #050e07;
+  --color-accent-dark: #103e17;
+  --color-surface-green: #e1f4df;
+  --color-surface-green-strong: #b1dbb8;
+  --color-surface-blue: #cadfe5;
+  --color-on-image: #ffffff;
+  --color-form-field: #eff5f7;
+  --color-form-focus: #77aeb8;
+  --color-text-secondary: color-mix(in srgb, var(--color-text-primary) 72%, var(--color-background));
+  --color-border: color-mix(in srgb, var(--color-accent-dark) 24%, var(--color-background));
+  --color-overlay: color-mix(in srgb, var(--color-text-primary) 48%, transparent);
+  --color-hero-overlay: #080d09;
+  --color-hover: color-mix(in srgb, var(--color-accent-dark) 90%, var(--color-on-image));
+  --color-header-surface: #f7f5ef;
+  --color-header-glass: color-mix(in srgb, var(--color-on-image) 40%, transparent);
+  --color-menu-hover: color-mix(in srgb, var(--color-on-image) 50%, transparent);
+  --radius-header: 20px;
+  --header-blur: 16px;
+  --color-error: #8b2424;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+  --space-9: 96px; --space-10: 128px; --space-11: 160px;
+  --content-width: 1280px;
+  --page-gutter: 64px;
+  --section-gap: clamp(128px, 10vw, 160px);
+  --radius-card: 32px; --radius-media: 48px; --radius-control: 12px; --radius-button: 14px;
+  --radius-action-button: 16px;
+  --height-action-button: 52px;
+}
+@media (max-width: 1100px) { :root { --page-gutter: 32px; } }
+@media (max-width: 600px) { :root { --page-gutter: 20px; --section-gap: clamp(72px, 20vw, 96px); --radius-card: 24px; --radius-media: 28px; } }

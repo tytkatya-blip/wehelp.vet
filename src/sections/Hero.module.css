@@ -1,0 +1,7 @@
+.hero { position: relative; min-height: 100svh; display: grid; color: var(--color-on-image); isolation: isolate; }
+.content { position: relative; width: min(1000px, calc(100% - var(--page-gutter) * 2)); margin-inline: auto; min-height: 100svh; display: grid; grid-template-rows: 1fr auto 1fr; justify-items: center; align-items: center; row-gap: var(--space-6); text-align: center; }
+.content h1 { grid-row: 2; transform: translateY(calc(-5svh + var(--hero-reveal-y, 0px))); }
+.support { grid-row: 3; align-self: end; max-width: 480px; padding-bottom: var(--space-8); }
+.support [data-hero-reveal] { transform: translateY(var(--hero-reveal-y, 0px)); }
+.support p { font-size: var(--text-large); margin-bottom: var(--space-6); }
+@media(max-width: 600px) { .break { display: none; } .support { padding-bottom: var(--space-7); } }

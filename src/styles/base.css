@@ -1,0 +1,13 @@
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--space-10); }
+body { min-width: 320px; background: var(--color-background); color: var(--color-text-primary); }
+button, input, textarea { font: inherit; }
+button, a, input, textarea { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+a { color: inherit; text-underline-offset: 5px; }
+img, video { display: block; max-width: 100%; }
+button { color: inherit; }
+:focus-visible { outline: 3px solid var(--color-accent-dark); outline-offset: 5px; }
+[hidden] { display: none !important; }
+::selection { background: var(--color-surface-blue); color: var(--color-text-primary); }

@@ -1,0 +1,4 @@
+.media { position: absolute; inset: 0; clip-path: inset(0 round 0); background: var(--color-accent-dark); will-change: clip-path; }
+.media img, .media video { width: 100%; height: 100%; object-fit: cover; object-position: center 45%; }
+.shade { position: absolute; inset: 0; background: color-mix(in srgb, var(--color-hero-overlay) 48%, transparent); }
+.placeholder { height: 100%; display: grid; place-items: center; color: var(--color-on-image); }
