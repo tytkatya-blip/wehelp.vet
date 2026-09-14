@@ -64,7 +64,19 @@ export function Header() {
     onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false) }}
   >
     <a className={styles.brand} href="#home" aria-label="WeHelp.vet home">WeHelp.vet</a>
-    <button ref={toggle} className={styles.toggle} aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpen(!open)}>{open ? 'Close' : 'Menu'} <span aria-hidden="true">{open ? '×' : '☰'}</span></button>
+    <button
+      ref={toggle}
+      className={styles.toggle}
+      type="button"
+      aria-expanded={open}
+      aria-controls="main-navigation"
+      aria-label={open ? 'Close navigation' : 'Open navigation'}
+      onClick={() => setOpen(!open)}
+    >
+      <span aria-hidden="true" />
+      <span aria-hidden="true" />
+      <span aria-hidden="true" />
+    </button>
     <nav id="main-navigation" aria-label="Main navigation" className={`${styles.nav} ${open ? styles.open : ''}`}>
       <div className={styles.menu}>{navigation.map(link => <a key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.label}</a>)}</div>
       <a className={`button ${styles.cta}`} href="#contact" onClick={() => setOpen(false)}>Let’s discuss</a>

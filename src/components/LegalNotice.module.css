@@ -3,3 +3,10 @@
 .dialog::backdrop { background: var(--color-overlay); }
 .dialog h2 { font-size: var(--text-h3); }
 .dialog p { font-size: var(--text-body); margin-block: var(--space-5); }
+
+@media (max-width: 600px) {
+  .link {
+    min-height: 26px;
+    padding: 0;
+  }
+}

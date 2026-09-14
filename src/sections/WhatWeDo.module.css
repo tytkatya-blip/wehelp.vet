@@ -7,4 +7,8 @@
 .card p, .other { color: var(--color-text-secondary); }
 .other { text-align: center; margin-top: var(--space-7); }
 .other a { display: inline-flex; align-items: center; min-height: 44px; color: var(--color-text-primary); margin-inline: var(--space-2); }
-@media(max-width: 900px) { .grid { grid-template-columns: 1fr; } .card { padding: var(--space-6); } }
+@media(max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+  .card { padding: var(--space-5); }
+  .card img, .card h3 { margin-bottom: var(--space-4); }
+}

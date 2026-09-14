@@ -102,7 +102,7 @@
   width: min(var(--content-width), calc(100vw - var(--page-gutter) * 2));
   flex: 0 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 400px) minmax(0, 660px);
+  grid-template-columns: minmax(0, 450px) minmax(0, 660px);
   justify-content: space-between;
   align-items: center;
   gap: clamp(48px, 7vw, 120px);
@@ -111,12 +111,12 @@
 
 .caseCopy {
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
 }
 
 .caseCopy h3,
 .staticCopy h3 {
-  max-width: 400px;
+  max-width: 450px;
   margin-bottom: var(--space-6);
   font-family: var(--font-heading);
   font-size: 44px;
@@ -142,7 +142,7 @@
 }
 
 .description {
-  max-width: 400px;
+  max-width: 450px;
   color: var(--color-text-secondary);
   font-size: clamp(17px, 1.25vw, 20px);
   line-height: 1.55;
@@ -151,7 +151,7 @@
 .imageFrame {
   width: 100%;
   max-width: 660px;
-  aspect-ratio: 1.2;
+  aspect-ratio: 1.3;
   padding: clamp(40px, 2.6vw, 48px);
   display: grid;
   place-items: center;
@@ -193,7 +193,7 @@
 .comparison ul {
   padding: 0;
   list-style: none;
-  font-size: clamp(16px, 1.15vw, 19px);
+  font-size: var(--text-body);
   line-height: 1.75;
 }
 
@@ -215,7 +215,7 @@
 }
 
 .result {
-  max-width: 400px;
+  max-width: 450px;
   font-size: clamp(16px, 1.15vw, 19px);
   font-weight: 600;
   line-height: 1.5;
@@ -227,7 +227,6 @@
 
 @media (min-width: 1025px) {
   .description,
-  .comparison ul,
   .result {
     font-size: 16px;
   }
@@ -235,7 +234,7 @@
 
 @media (max-width: 1200px) and (min-width: 1025px) {
   .caseSlide {
-    grid-template-columns: minmax(0, 400px) minmax(0, 660px);
+    grid-template-columns: minmax(0, 450px) minmax(0, 660px);
     gap: 48px;
   }
 
@@ -248,7 +247,6 @@
     gap: 12px;
   }
 
-  .comparison ul,
   .result {
     font-size: 16px;
   }
@@ -284,7 +282,7 @@
 
   .staticCase {
     display: grid;
-    grid-template-columns: minmax(0, 400px) minmax(300px, 660px);
+    grid-template-columns: minmax(0, 450px) minmax(300px, 660px);
     justify-content: space-between;
     align-items: center;
     gap: var(--space-7);
@@ -309,7 +307,7 @@
     grid-column: 1;
     grid-row: 1;
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
   }
 
   .staticCopy h3 {
@@ -324,7 +322,7 @@
 
 @media (max-width: 700px) {
   .staticList {
-    gap: var(--space-8);
+    gap: var(--space-9);
   }
 
   .staticCase {
@@ -349,7 +347,7 @@
 
   .staticCopy h3 {
     margin-bottom: var(--space-4);
-    font-size: 34px;
+    font-size: 30px;
   }
 
   .comparison {
@@ -358,9 +356,8 @@
     margin-block: var(--space-6);
   }
 
-  .comparison ul,
   .result {
-    font-size: var(--text-small);
+    font-size: var(--text-body);
   }
 
   .arrow {

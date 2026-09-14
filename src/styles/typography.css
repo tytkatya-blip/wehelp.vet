@@ -15,3 +15,10 @@ h1 { font-size: var(--text-display); line-height: var(--leading-display); }
 h2 { font-size: var(--text-h2); line-height: 1.08; }
 h3 { font-size: var(--text-large); line-height: 1.35; font-weight: 500; }
 p { text-wrap: pretty; }
+
+@media (max-width: 600px) {
+  :root {
+    --text-display: 48px;
+    --text-h2: 40px;
+  }
+}

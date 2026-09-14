@@ -109,6 +109,14 @@
     margin-bottom: var(--space-4);
   }
 
+  .number {
+    font-size: var(--text-body);
+  }
+
+  .content h3 {
+    font-size: var(--text-h3);
+  }
+
   .content > p:last-child {
     font-size: var(--text-body);
   }
