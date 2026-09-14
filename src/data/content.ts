@@ -20,9 +20,9 @@ export const caseScreens: CaseScreen[] = [
   { id: 'website-and-education', cases: [cases[1], cases[2]] },
 ]
 export const processSteps: ProcessStep[] = [
-  { number: '01', title: 'We understand the challenge.', description: 'We assess the current situation and identify what’s holding the team back. We propose the first step and agree on the deliverables, scope, and cost.', backgroundColor: 'var(--color-background)', accentColor: 'var(--color-accent-dark)' },
-  { number: '02', title: 'We take care of the implementation.', description: 'We select the right tools, design, and develop the solution. We drive the work forward ourselves, demonstrate progress, and coordinate key decisions.', backgroundColor: 'var(--color-background)', accentColor: 'var(--color-accent-dark)' },
-  { number: '03', title: 'We stay by your side.', description: 'We test the solution together with your team, hand over all access and explain how everything works. Ongoing support can be arranged separately.', backgroundColor: 'var(--color-background)', accentColor: 'var(--color-accent-dark)' },
+  { number: '01', title: 'We understand the challenge', description: 'We assess the current situation and identify what’s holding the team back. We propose the first step and agree on the deliverables, scope, and cost.', backgroundColor: 'var(--color-background)', accentColor: 'var(--color-accent-dark)' },
+  { number: '02', title: 'We take care of the implementation', description: 'We select the right tools, design, and develop the solution. We drive the work forward ourselves, demonstrate progress, and coordinate key decisions.', backgroundColor: 'var(--color-background)', accentColor: 'var(--color-accent-dark)' },
+  { number: '03', title: 'We stay by your side', description: 'We test the solution together with your team, hand over all access and explain how everything works. Ongoing support can be arranged separately.', backgroundColor: 'var(--color-background)', accentColor: 'var(--color-accent-dark)' },
 ]
 export const team: TeamMember[] = [
   { role: 'Founder & Project Lead', image: '/media/team-01.webp', description: 'Your main point of contact. He understands the challenge, recommends the right approach and guides the project.' },
