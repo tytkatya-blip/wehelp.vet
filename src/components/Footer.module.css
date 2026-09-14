@@ -9,8 +9,8 @@
 }
 .brand { grid-area: brand; display: flex; align-items: center; gap: var(--space-3); text-decoration: none; font-size: var(--text-large); font-weight: 600; }
 .email { grid-area: email; justify-self: end; display: inline-flex; align-items: center; min-height: 48px; font-weight: 500; text-decoration: none; }
-.legal { grid-area: legal; justify-self: end; }
-.copyright { grid-area: copyright; }
+.legal { grid-area: legal; justify-self: end; align-self: baseline; }
+.copyright { grid-area: copyright; align-self: baseline; }
 .copyright, .legal { font-size: var(--text-label); color: var(--color-text-secondary); }
 @media(max-width: 600px) {
   .footer {
