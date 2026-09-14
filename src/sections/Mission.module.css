@@ -6,4 +6,4 @@
 .content img { margin: 0 auto var(--space-9); }
 .content h2 { margin-bottom: var(--space-6); }
 .content p { color: color-mix(in srgb, var(--color-on-image) 70%, transparent); font-size: var(--text-large); }
-@media(max-width: 600px) { .mission { min-height: 660px; } .content img { margin-bottom: var(--space-8); } .photo { object-position: 58% center; } }
+@media(max-width: 600px) { .mission { min-height: 660px; } .content img { width: 49.6px; height: auto; margin-bottom: var(--space-8); } .photo { object-position: 58% center; } }

@@ -25,7 +25,7 @@ export const processSteps: ProcessStep[] = [
   { number: '03', title: 'We stay by your side.', description: 'We test the solution together with your team, hand over all access and explain how everything works. Ongoing support can be arranged separately.', backgroundColor: 'var(--color-background)', accentColor: 'var(--color-accent-dark)' },
 ]
 export const team: TeamMember[] = [
-  { role: 'Founder & Project Lead', image: '/media/team-01.webp', description: 'Your main point of contact. He understands the challenge, recommends the right approach and guides the project from start to finish.' },
+  { role: 'Founder & Project Lead', image: '/media/team-01.webp', description: 'Your main point of contact. He understands the challenge, recommends the right approach and guides the project.' },
   { role: 'Developer', image: '/media/team-02.webp', description: 'Builds digital services, connects systems and makes sure everything works reliably.' },
   { role: 'Designer', image: '/media/team-03.webp', description: 'Makes complex things clear and easy to use — from the overall structure to the smallest interface details.' },
 ]

@@ -114,10 +114,44 @@
   }
 
   .content h3 {
-    font-size: var(--text-h3);
+    font-size: 32px;
   }
 
   .content > p:last-child {
     font-size: var(--text-body);
+  }
+}
+
+@media (max-width: 700px) and (prefers-reduced-motion: no-preference) {
+  .stage {
+    height: 100svh;
+    min-height: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .heading {
+    position: absolute;
+    inset: clamp(80px, 12vh, 104px) var(--page-gutter) auto;
+    margin: 0;
+  }
+
+  .layers {
+    position: absolute;
+    inset: 0;
+    padding: 100px var(--page-gutter) var(--space-5);
+    display: grid;
+    place-items: center;
+    gap: 0;
+  }
+
+  .layer {
+    grid-area: 1 / 1;
+    width: 100%;
+    will-change: transform, opacity;
+  }
+
+  .content > * {
+    will-change: transform, opacity;
   }
 }

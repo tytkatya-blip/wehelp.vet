@@ -5,4 +5,11 @@
 .member h3 { margin-bottom: var(--space-3); }
 .member p { color: var(--color-text-secondary); max-width: 280px; }
 @media(max-width: 900px) { .intro { grid-template-columns: 1fr; gap: var(--space-5); } .intro p { max-width: 600px; } .grid { gap: var(--space-5); } }
-@media(max-width: 600px) { .grid { grid-template-columns: 1fr; gap: var(--space-7); } .member p { max-width: 100%; } }
+@media(max-width: 600px) {
+  .grid { grid-template-columns: 1fr; gap: var(--space-6); }
+  .member { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: var(--space-4); align-items: center; }
+  .member img { width: 104px; height: 104px; margin-bottom: 0; }
+  .memberCopy { min-width: 0; }
+  .member h3 { font-size: 16px; }
+  .member p { max-width: 100%; }
+}

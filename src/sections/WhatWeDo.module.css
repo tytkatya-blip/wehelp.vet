@@ -12,3 +12,8 @@
   .card { padding: var(--space-5); }
   .card img, .card h3 { margin-bottom: var(--space-4); }
 }
+
+@media(max-width: 600px) {
+  .symbol { width: 49.6px; height: auto; }
+  .other { padding-bottom: 48px; }
+}

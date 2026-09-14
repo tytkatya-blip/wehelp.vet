@@ -24,10 +24,31 @@ export function HowWeWork() {
     const rootStyles = getComputedStyle(document.documentElement)
     const initialGreen = rootStyles.getPropertyValue('--color-surface-green').trim()
     const finalGreen = rootStyles.getPropertyValue('--color-surface-green-strong').trim()
-    const finalScale = 0.72
+    const isMobile = window.matchMedia('(max-width: 700px)').matches
+    const finalScale = isMobile ? 1 : 0.72
     const finalDescriptionSize = 16 / finalScale
     const singleStepOffset = () => -window.innerHeight * 0.05
     const finalOffset = () => Math.min(225, window.innerHeight * 0.27)
+    const mobileFinalOffsets = () => {
+      const heights = steps.map(step => step.offsetHeight)
+      const contentHeight = heights.reduce((total, height) => total + height, 0)
+      const availableGap = (layers.clientHeight - contentHeight) / (steps.length - 1)
+      const gap = Math.max(0, Math.min(16, availableGap))
+      const stackHeight = contentHeight + gap * (steps.length - 1)
+      let cursor = -stackHeight / 2
+
+      return heights.map(height => {
+        const center = cursor + height / 2
+        cursor += height + gap
+        return center
+      })
+    }
+    const finalY = (index: number) => {
+      if (isMobile) return mobileFinalOffsets()[index]
+      if (index === 0) return -finalOffset()
+      if (index === 2) return finalOffset()
+      return 0
+    }
 
     motion.set(stage, { backgroundColor: initialGreen })
     motion.set(heading, { autoAlpha: 0, y: 12 })
@@ -77,11 +98,11 @@ export function HowWeWork() {
       .set(steps, {
         autoAlpha: 0,
         scale: finalScale,
-        y: index => index === 0 ? -finalOffset() + 30 : index === 2 ? finalOffset() + 30 : 30,
+        y: index => finalY(index) + 30,
       }, 4.02)
-      .to(steps[0], { autoAlpha: 1, y: () => -finalOffset(), duration: 0.52, ease: 'power2.out' }, 4.08)
-      .to(steps[1], { autoAlpha: 1, y: 0, duration: 0.52, ease: 'power2.out' }, 4.22)
-      .to(steps[2], { autoAlpha: 1, y: () => finalOffset(), duration: 0.52, ease: 'power2.out' }, 4.36)
+      .to(steps[0], { autoAlpha: 1, y: () => finalY(0), duration: 0.52, ease: 'power2.out' }, 4.08)
+      .to(steps[1], { autoAlpha: 1, y: () => finalY(1), duration: 0.52, ease: 'power2.out' }, 4.22)
+      .to(steps[2], { autoAlpha: 1, y: () => finalY(2), duration: 0.52, ease: 'power2.out' }, 4.36)
       .to({}, { duration: 0.6 })
 
     return () => {
@@ -92,7 +113,11 @@ export function HowWeWork() {
     }
   }, [])
 
-  useMotionScene(sectionRef, setupScene)
+  useMotionScene(
+    sectionRef,
+    setupScene,
+    '(min-width: 1025px) and (prefers-reduced-motion: no-preference), (max-width: 700px) and (prefers-reduced-motion: no-preference)',
+  )
 
   return <section id="how-we-work" ref={sectionRef} className={`section ${styles.outer}`} aria-labelledby="process-heading">
     <div ref={stageRef} className={styles.stage}>

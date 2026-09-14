@@ -69,10 +69,10 @@ Use lowercase kebab-case local names under `public/media`, such as `hero-poster.
 
 1. Hero (implemented): animate `clip-path: inset(...)` and corner radius from full viewport to inset media while the section scrolls normally. The same media wrapper supports the current image and a future video. No width/height/top/left animation.
 2. Cases (implemented): pin a `100svh` desktop stage with a fixed heading and footnote. Change the first case body, then translate three complete case slides horizontally with `scrub: 0.25`. On tablet, mobile and reduced motion, render the static case sequence.
-3. Process (implemented): pin the `100svh` stage, reveal the three approved steps in sequence, transition the background from white to green, then assemble all three steps in the final view. Tablet, mobile and reduced-motion modes show the complete green static composition.
+3. Process (implemented): pin the `100svh` stage on desktop and mobile, reveal the three approved steps in sequence, transition the background from light to strong green, then assemble all three steps in the final view. The mobile composition keeps the elements at their natural scale. Tablet and reduced-motion modes show the complete green static composition.
 4. Pass stable scene setup functions to `useMotionScene`. Its `gsap.matchMedia` scope restricts enhancements to desktop with no reduced-motion preference and reverts owned animations/ScrollTriggers on breakpoint changes and unmount, including React Strict Mode cleanup. Never globally kill unrelated triggers.
 
-The Experience and How We Work desktop scroll scenes are implemented.
+The Experience desktop scroll scene and the How We Work desktop/mobile scroll scenes are implemented.
 
 ## Verification performed
 

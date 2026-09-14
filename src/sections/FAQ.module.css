@@ -35,3 +35,13 @@
   padding: 0 var(--space-6) var(--space-6);
   color: var(--color-text-secondary);
 }
+
+@media (max-width: 600px) {
+  .item button {
+    padding-inline: var(--space-5);
+  }
+
+  .answerInner > p {
+    padding-inline: var(--space-5);
+  }
+}
