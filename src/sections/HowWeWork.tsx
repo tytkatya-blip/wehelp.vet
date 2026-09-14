@@ -18,6 +18,8 @@ export function HowWeWork() {
 
     const steps = motion.utils.toArray<HTMLElement>('[data-process-step]', layers)
     const items = steps.map(step => motion.utils.toArray<HTMLElement>('[data-process-item]', step))
+    const numbers = motion.utils.toArray<HTMLElement>('[data-process-number]', layers)
+    const titles = motion.utils.toArray<HTMLElement>('h3', layers)
     const descriptions = motion.utils.toArray<HTMLElement>('[data-process-description]', layers)
     if (steps.length !== 3) return
 
@@ -26,7 +28,10 @@ export function HowWeWork() {
     const finalGreen = rootStyles.getPropertyValue('--color-surface-green-strong').trim()
     const isMobile = window.matchMedia('(max-width: 700px)').matches
     const finalScale = isMobile ? 1 : 0.72
-    const finalDescriptionSize = 16 / finalScale
+    const finalNumberSize = isMobile ? 14 : 'var(--text-large)'
+    const finalNumberMargin = isMobile ? 'var(--space-3)' : 'var(--space-5)'
+    const finalTitleSize = isMobile ? 24 : 'var(--text-h2)'
+    const finalDescriptionSize = isMobile ? 15 : 16 / finalScale
     const singleStepOffset = () => -window.innerHeight * 0.05
     const finalOffset = () => Math.min(225, window.innerHeight * 0.27)
     const mobileFinalOffsets = () => {
@@ -94,6 +99,8 @@ export function HowWeWork() {
       .set(steps[2], { autoAlpha: 0 }, 3.82)
       .to(stage, { backgroundColor: finalGreen, duration: 0.62, ease: 'none' }, 3.64)
       .set(items.flat(), { autoAlpha: 1, y: 0 }, 4.02)
+      .set(numbers, { fontSize: finalNumberSize, marginBottom: finalNumberMargin }, 4.02)
+      .set(titles, { fontSize: finalTitleSize }, 4.02)
       .set(descriptions, { fontSize: finalDescriptionSize }, 4.02)
       .set(steps, {
         autoAlpha: 0,
@@ -124,7 +131,7 @@ export function HowWeWork() {
       <h2 ref={headingRef} id="process-heading" className={`eyebrow ${styles.heading}`}>How we work</h2>
       <div ref={layersRef} className={styles.layers}>{processSteps.map(step => <article key={step.number} className={styles.layer} data-process-step>
         <div className={styles.content}>
-          <p className={styles.number} style={{ color: step.accentColor }} data-process-item>{step.number}</p>
+          <p className={styles.number} style={{ color: step.accentColor }} data-process-item data-process-number>{step.number}</p>
           <h3 data-process-item>{step.title}</h3>
           <p data-process-item data-process-description>{step.description}</p>
         </div>
