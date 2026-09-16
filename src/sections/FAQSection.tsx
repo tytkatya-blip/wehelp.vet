@@ -9,6 +9,6 @@ export default function FAQSection() {
       <h3><button id={`faq-button-${i}`} aria-expanded={active === i} aria-controls={`faq-answer-${i}`} onClick={() => setActive(active === i ? null : i)}>{question}<img className="chevron-icon" src="/media/chevron.svg" width="11" height="5" alt="" /></button></h3>
       <div id={`faq-answer-${i}`} className="faq-answer" role="region" aria-labelledby={`faq-button-${i}`} inert={active !== i} aria-hidden={active !== i}><div><p>{answer}</p></div></div>
     </div>)}</div>
-    <img className="faq-image" src="/media/image-faq.webp" alt="" width="1430" height="708" loading="lazy" />
+    <img className="faq-image" src="/media/image-faq.webp?v=1841e6f373" alt="" width="1430" height="708" loading="lazy" />
   </Container></section>
 }

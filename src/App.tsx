@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import Hero from './sections/Hero'
 import HelpEntrySection from './sections/HelpEntrySection'
 import ServicesSection from './sections/ServicesSection'
+import BigTextSection from './sections/BigTextSection'
 import CaseStudySection from './sections/CaseStudySection'
 import InsightSection from './sections/InsightSection'
 import ProcessSection from './sections/ProcessSection'
@@ -13,5 +14,5 @@ import ContactSection from './sections/ContactSection'
 export default function App() {
   const main = useRef<HTMLElement>(null)
   useRevealAnimations(main)
-  return <><a className="skip-link" href="#main">Skip to content</a><Header /><main id="main" ref={main}><Hero /><HelpEntrySection /><ServicesSection /><CaseStudySection /><InsightSection /><ProcessSection /><FAQSection /><ContactSection /></main><Footer /></>
+  return <><a className="skip-link" href="#main">Skip to content</a><Header /><main id="main" ref={main}><Hero /><HelpEntrySection /><BigTextSection /><ServicesSection /><CaseStudySection /><InsightSection /><ProcessSection /><FAQSection /><ContactSection /></main><Footer /></>
 }

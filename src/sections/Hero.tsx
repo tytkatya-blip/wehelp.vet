@@ -1,15 +1,8 @@
-import { copy, heroContacts } from '../data/content'
+import { copy } from '../data/content'
 import { Button, Container } from '../components/Primitives'
 export default function Hero() {
   return <section className="hero" id="home" aria-labelledby="hero-title">
     <Container className="hero-inner">
-      <ul className="hero-contacts" aria-label="Contacts">
-        {heroContacts.map(({ id, label, href }) => <li key={id}>
-          {href
-            ? <a className="hero-contact-link" href={href}>{label}</a>
-            : <span className="hero-contact-link">{label}</span>}
-        </li>)}
-      </ul>
       <div className="hero-copy">
         <h1 id="hero-title">A digital partner<br className="desktop-break" /> for veterinary teams</h1>
         <p>{copy.heroBody}</p>

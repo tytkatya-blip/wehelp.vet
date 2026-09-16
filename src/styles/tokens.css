@@ -37,8 +37,11 @@
   --space-40: 40px;
   --space-64: 64px;
   --space-80: 80px;
+  --space-100: 100px;
   --space-112: 112px;
   --space-132: 132px;
+  --space-140: 140px;
+  --space-180: 180px;
   --container-max: 1280px;
   --gutter: 80px;
   --radius: 4px;
@@ -46,6 +49,7 @@
   --header-height: 72px;
   --link-hover-opacity: .72;
   --motion: 220ms ease;
+  --motion-section-distance: 48px;
   --motion-reveal-duration: 1000ms;
   --motion-heading-duration: 600ms;
   --motion-hero-duration: 1300ms;

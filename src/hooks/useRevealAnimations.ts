@@ -10,12 +10,14 @@ export function useRevealAnimations(rootRef: RefObject<HTMLElement | null>) {
     const targets = new Set<HTMLElement>()
     const shown = new Set<HTMLElement>()
     let observer: IntersectionObserver | undefined
+    let sectionObserver: IntersectionObserver | undefined
     const add = (element: HTMLElement | null, delay = 0, kind = 'content') => {
       if (!element) return
       targets.add(element)
       element.dataset.revealKind = kind
       element.style.setProperty('--reveal-delay', `${delay}ms`)
     }
+    root.querySelectorAll<HTMLElement>(':scope > section:not(.hero):not(.big-text-section)').forEach(section => add(section, 0, 'section'))
     root.querySelectorAll<HTMLElement>('.section-intro').forEach(intro => {
       add(intro.querySelector('h2'), 0, 'heading')
       add(intro.querySelector('.eyebrow'))
@@ -30,6 +32,7 @@ export function useRevealAnimations(rootRef: RefObject<HTMLElement | null>) {
     add(root.querySelector('.hero-image'), 0, 'hero-image')
     add(root.querySelector('.case-media'), 100)
     add(root.querySelector('.other-task'), 200)
+    add(root.querySelector('.services-image'), 100)
     add(root.querySelector('.faq-image'), 100)
     add(root.querySelector('.contact-language'), 200)
     add(root.querySelector('.form-panel'), 100)
@@ -38,9 +41,11 @@ export function useRevealAnimations(rootRef: RefObject<HTMLElement | null>) {
       shown.add(element)
       element.dataset.reveal = 'visible'
       observer?.unobserve(element)
+      sectionObserver?.unobserve(element)
     }
     const start = () => {
       observer?.disconnect()
+      sectionObserver?.disconnect()
       if (media.matches) {
         delete root.dataset.motion
         targets.forEach(reveal)
@@ -51,22 +56,31 @@ export function useRevealAnimations(rootRef: RefObject<HTMLElement | null>) {
           if (entry.isIntersecting && entry.intersectionRatio >= 0.5) reveal(entry.target as HTMLElement)
         })
       }, { threshold: 0.5 })
+      sectionObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) reveal(entry.target as HTMLElement)
+        })
+      }, { threshold: 0, rootMargin: '0px 0px -8% 0px' })
       targets.forEach(element => {
         const bounds = element.getBoundingClientRect()
         if (shown.has(element) || bounds.bottom <= 0) {
           reveal(element)
         } else {
           element.dataset.reveal = 'pending'
-          observer?.observe(element)
+          if (element.dataset.revealKind === 'section') sectionObserver?.observe(element)
+          else observer?.observe(element)
         }
       })
       root.dataset.motion = 'ready'
     }
     const onFocus = (event: FocusEvent) => {
-      const element = (event.target as HTMLElement).closest<HTMLElement>('[data-reveal]')
-      if (element && targets.has(element)) {
-        element.style.setProperty('--reveal-delay', '0ms')
-        reveal(element)
+      let element: HTMLElement | null = event.target as HTMLElement
+      while (element && element !== root) {
+        if (targets.has(element)) {
+          element.style.setProperty('--reveal-delay', '0ms')
+          reveal(element)
+        }
+        element = element.parentElement
       }
     }
     start()
@@ -74,6 +88,7 @@ export function useRevealAnimations(rootRef: RefObject<HTMLElement | null>) {
     root.addEventListener('focusin', onFocus)
     return () => {
       observer?.disconnect()
+      sectionObserver?.disconnect()
       media.removeEventListener('change', start)
       root.removeEventListener('focusin', onFocus)
       delete root.dataset.motion
