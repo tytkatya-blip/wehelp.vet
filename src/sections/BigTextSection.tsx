@@ -1,7 +1,7 @@
 import { Fragment, useLayoutEffect, useRef } from 'react'
 import { Container } from '../components/Primitives'
 
-const text = 'We help grow businesses through digital solutions. Your team shouldn’t spend the day doing work your digital system could handle'
+const text = 'We help grow businesses through digital solutions. Your team shouldn’t spend the day doing work your digital system could handle.'
 const words = text.split(' ')
 
 export default function BigTextSection() {

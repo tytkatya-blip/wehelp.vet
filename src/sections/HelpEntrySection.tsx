@@ -1,6 +1,6 @@
 import { copy, help } from '../data/content'
 import { Container, SectionHeading } from '../components/Primitives'
-const titleLines = [['It’s difficult for clients', 'to get in touch'], ['The team is doing', 'too much manually'], ['You have an idea.', 'You need someone to build it']]
+const titleLines = [['It’s difficult for clients', 'to get in touch'], ['Your team spends too much', 'time on manual work'], ['You have an idea.', 'You need someone to build it']]
 export default function HelpEntrySection() {
   return <section className="help-section surface-muted" aria-labelledby="help-title"><Container>
     <SectionHeading id="help-title" text={copy.helpBody} centered>{copy.helpTitle}</SectionHeading>

@@ -1,16 +1,16 @@
 export const copy = {
   "heroTitle": "A digital partner for veterinary teams",
   "heroBody": "We help veterinary professionals and their teams improve websites, communications, and everyday workflows. We understand the problem, propose a solution, and take it through implementation.",
-  "helpTitle": "Where our help can begin",
+  "helpTitle": "Where we can help",
   "helpBody": "With a specific idea — or simply the feeling that everyday work is taking too much effort.",
   "caseTitle": "Website, platform and email. All in one project",
   "caseBody": "For the IAVC veterinary academy, we updated the website, moved educational materials to a learning platform, and set up email campaigns. Step by step, we are connecting the tools into a more convenient working system.",
-  "insightTitle": "We notice more than what is in the brief",
-  "insightBody": "While working with IAVC, we identified and solved issues the team had not yet had time to formulate.",
+  "insightTitle": "We look beyond the brief",
+  "insightBody": "While working with IAVC, we identified and solved issues the team hadn’t yet had time to put into a brief.",
   "processTitle": "From the first conversation to launch — one team",
   "processBody": "You do not need to write instructions for every step. We propose solutions and move the work forward. You communicate directly with the founder, designer, and developer.",
   "contactTitle": "Tell us how things work for you",
-  "contactBody": "Show us your website, tell us about an inconvenient process or a new idea. In the first conversation, we will understand the task and suggest where to start."
+  "contactBody": "Show us your website, tell us about a process that isn’t working well or a new idea. In the first conversation, we will understand the task and suggest where to start."
 } as const
 
 export const services = [
@@ -20,7 +20,7 @@ export const services = [
   },
   {
     "title": "Email & communications",
-    "text": "We choose the right service, migrate contacts, prepare templates, and launch email campaigns with analytics."
+    "text": "We choose the right service, organise your contact lists, prepare templates, and set up email campaigns with analytics."
   },
   {
     "title": "Processes & automation",
@@ -61,7 +61,7 @@ export const help = [
     "The website is outdated, the form is confusing, or the link from social media does not work."
   ],
   [
-    "The team is doing too much manually",
+    "Your team spends too much time on manual work",
     "They transfer inquiries, collect data, and write the same emails from scratch again and again."
   ],
   [
