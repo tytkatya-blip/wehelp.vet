@@ -1,10 +1,18 @@
-import { LegalNotice } from './LegalNotice'
-import styles from './Footer.module.css'
-export function Footer() {
-  return <footer className={`container ${styles.footer}`} data-reveal-group data-reveal-page-end>
-    <a className={styles.brand} href="#home" data-reveal><img src="/media/logo-symbol.svg" alt="" width="62" height="48" loading="lazy" /><span>WeHelp.vet</span></a>
-    <a className={styles.email} href="mailto:wehelp@vet.vc" data-reveal>wehelp@vet.vc</a>
-    <div className={styles.legal} data-reveal><LegalNotice label="Privacy Policy" /><span aria-hidden="true"> | </span><LegalNotice label="Terms & Conditions" /></div>
-    <p className={styles.copyright} data-reveal>© 2026 WeHelp.vet. All rights reserved</p>
+import { heroContacts } from '../data/content'
+import { Container } from './Primitives'
+export default function Footer() {
+  return <footer className="footer">
+    <Container className="footer-inner">
+      <div className="footer-brand"><a className="brand" href="#home">WeHelp.Vet</a><p>Digital partner for veterinary teams.</p></div>
+      <ul className="footer-contacts" aria-label="Contacts">
+        {heroContacts.map(({ id, label, href }) => <li key={id}>
+          {href ? <a href={href}>{label}</a> : <span>{label}</span>}
+        </li>)}
+      </ul>
+      <div className="footer-meta">
+        <p className="footer-copyright">© {new Date().getFullYear()} WeHelp.vet. All rights reserved</p>
+        <div className="footer-legal"><span>Privacy Policy</span><span aria-hidden="true">|</span><span>Terms &amp; Conditions</span></div>
+      </div>
+    </Container>
   </footer>
 }
