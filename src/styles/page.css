@@ -204,7 +204,7 @@ img { display: block; max-width: 100%; }
 }
 @media (max-width: 767px) {
   .brand { font-size: 20px; }
-  :root { --gutter: 24px; --size-hero: 52px; --size-heading: 40px; --size-subheading: 20px; --header-height: 72px; }
+  :root { --gutter: 24px; --size-hero: 48px; --size-heading: 40px; --size-subheading: 20px; --header-height: 72px; }
   html { overflow-x: clip; }
   .header { overflow: visible; }
   .header-inner { height: var(--header-height); gap: var(--space-16); flex-wrap: nowrap; }
