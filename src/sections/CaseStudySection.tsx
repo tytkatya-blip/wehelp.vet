@@ -22,7 +22,7 @@ export default function CaseStudySection() {
     <div className="split-grid case-grid">
       <SectionHeading id="case-title" eyebrow="Our work / IAVC" text={copy.caseBody}>Website, platform<br /> and email.<br /> All in one project</SectionHeading>
       <div className="case-media">
-      <div className="case-gallery" role="region" aria-label="IAVC project images" aria-roledescription="carousel">
+      <div className="case-gallery case-gallery--desktop" role="region" aria-label="IAVC project images" aria-roledescription="carousel">
         <div className="case-images">{images.map((src, index) => <img
           key={src}
           ref={element => { imageRefs.current[index] = element }}
@@ -35,6 +35,14 @@ export default function CaseStudySection() {
         <button className="gallery-arrow gallery-arrow--previous" aria-label="Previous project image" onClick={() => { void changeImage(-1) }}><img className="chevron-icon" src="/media/chevron.svg" width="11" height="5" alt="" /></button>
         <button className="gallery-arrow gallery-arrow--next" aria-label="Next project image" onClick={() => { void changeImage(1) }}><img className="chevron-icon" src="/media/chevron.svg" width="11" height="5" alt="" /></button>
         <span className="sr-only" aria-live="polite">{active + 1} / {images.length}</span>
+      </div>
+      <div className="case-gallery--mobile" role="region" aria-label="IAVC project images — swipe to browse" aria-roledescription="carousel" tabIndex={0}>
+        {images.map((src, index) => <img
+          key={src}
+          src={src}
+          alt={`IAVC veterinary academy project — image ${index + 1} of ${images.length}`}
+          width="1196" height="800" loading="lazy"
+        />)}
       </div>
       <a className="case-website-link" href="https://i-a-v-c.com/" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span></a>
       </div>
